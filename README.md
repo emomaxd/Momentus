@@ -13,17 +13,6 @@ Features
 - Perform actions periodically at specified intervals
 - Perform actions after a specified delay
 
-Installation
-------------
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/EmomaxD/Momentus.git
-    ```
-
-2. Include the library in your project:
-    - Include "Momentus.h" files to your project.
-
 Usage
 -----
 
@@ -31,9 +20,9 @@ Usage
 #include "Momentus.h"
 
 int main() {
-    DateTime dt; // Initialize with current date and time
+    Momentus::DateTime dt; // Initialize with current date and time
 
-    DateTime specificDate(2023, 7, 10, 15, 30, 0); // Initialize with specific date and time
+    Momentus::DateTime specificDate(2023, 7, 10, 15, 30, 0); // Initialize with specific date and time
 
 
     dt.addDays(5); // Add 5 days
@@ -52,13 +41,13 @@ int main() {
 
     
     // Perform action every 2 seconds
-    dt.doEvery(DateTime::Period::Second, 2, []() {
+    dt.doEvery(Momentus::DateTime::Period::Second, 2, []() {
         std::cout << "Executing action every 2 seconds..." << std::endl;
     });
 
     
     // Perform action after 5 seconds
-    dt.doAfter(DateTime::Period::Second, 5, []() {
+    dt.doAfter(Momentus::DateTime::Period::Second, 5, []() {
         std::cout << "Executing action after 5 seconds..." << std::endl;
     });
 
